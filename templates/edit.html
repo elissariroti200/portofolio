@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Proyek</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f0fa;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #73558f;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 11px;
+            margin-top: 7px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+
+        button, .cancel {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button {
+            background: #8063a5;
+            color: white;
+        }
+
+        .cancel {
+            background: #e8e2ef;
+            color: #493b57;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Edit Proyek</h2>
+
+    <form method="POST">
+
+        <label>Nama Proyek</label>
+        <input type="text" name="name"
+               value="{{ proyek.name }}" required>
+
+        <label>Kategori</label>
+        <select name="category" required>
+            {% for kategori in [
+                "Web Development",
+                "Frontend Development",
+                "Backend Development",
+                "Database",
+                "UI/UX Design",
+                "Other IT Projects"
+            ] %}
+                <option value="{{ kategori }}"
+                    {% if proyek.category == kategori %}selected{% endif %}>
+                    {{ kategori }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <label>Deskripsi</label>
+        <textarea name="description" required>{{ proyek.description }}</textarea>
+
+        <label>Teknologi</label>
+        <input type="text" name="technologies"
+               value="{{ proyek.technologies | join(', ') }}"
+               placeholder="HTML, CSS, Python">
+
+        <label>Link GitHub</label>
+        <input type="text" name="github"
+               value="{{ proyek.github }}">
+
+        <label>Link Demo</label>
+        <input type="text" name="demo"
+               value="{{ proyek.demo }}">
+
+        <label>Link Gambar</label>
+        <input type="text" name="image"
+               value="{{ proyek.image }}">
+
+        <button type="submit">Simpan Perubahan</button>
+
+        <a href="{{ url_for('dashboard') }}" class="cancel">
+            Batal
+        </a>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project | Elis Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f5fa;
+            color: #514956;
+            padding: 35px 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .form-card {
+            background: white;
+            padding: 35px;
+            border-radius: 22px;
+            box-shadow: 0 5px 25px rgba(80, 60, 90, 0.05);
+        }
+
+        h1 {
+            color: #5b4d5d;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #968a98;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #e9e0eb;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            outline: none;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #d9a8c2;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 13px 20px;
+            border: none;
+            border-radius: 11px;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .btn-save {
+            background: #d9a8c2;
+            color: white;
+            flex: 1;
+        }
+
+        .btn-back {
+            background: #f1edf3;
+            color: #806b9b;
+        }
+
+        @media (max-width: 500px) {
+            .form-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-card">
+
+        <h1>Add New Project ♡</h1>
+
+        <p class="subtitle">
+            Tambahkan proyek baru ke dalam personal portfolio kamu.
+        </p>
+
+        <form method="POST">
+
+            <label>Project Name</label>
+            <input
+                type="text"
+                name="name"
+                placeholder="Contoh: Website Portfolio"
+                required
+            >
+
+            <label>Category</label>
+            <select name="category" required>
+                <option value="">Pilih kategori</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Frontend Development">Frontend Development</option>
+                <option value="Backend Development">Backend Development</option>
+                <option value="Database">Database</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="Other IT Projects">Other IT Projects</option>
+            </select>
+
+            <label>Project Description</label>
+            <textarea
+                name="description"
+                placeholder="Jelaskan proyek yang kamu buat..."
+                required
+            ></textarea>
+
+            <label>Technologies</label>
+            <input
+                type="text"
+                name="technologies"
+                placeholder="Contoh: HTML, CSS, Python, Flask"
+            >
+
+            <label>GitHub Link</label>
+            <input
+                type="url"
+                name="github"
+                placeholder="https://github.com/elissariroti200"
+            >
+
+            <label>Demo Website</label>
+            <input
+                type="url"
+                name="demo"
+                placeholder="https://websitekamu.com"
+            >
+
+            <label>Project Image URL</label>
+            <input
+                type="url"
+                name="image"
+                placeholder="https://example.com/gambar.jpg"
+            >
+
+            <div class="buttons">
+
+                <a href="{{ url_for('dashboard') }}"
+                   class="btn btn-back">
+                    Cancel
+                </a>
+
+                <button type="submit" class="btn btn-save">
+                    Save Project
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

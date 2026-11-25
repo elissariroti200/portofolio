@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elis | Personal Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #e9f0f3;
+            color: #454c55;
+            padding: 40px 6%;
+        }
+
+        .main-container {
+            max-width: 1450px;
+            margin: auto;
+            background: #fbfcfd;
+            border-radius: 35px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px 45px;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #cf91b1;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #747d88;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #321424;
+        }
+
+        .talk-button {
+            background: #341c29;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        /* HOME */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr 1fr;
+            align-items: center;
+            gap: 35px;
+            padding: 25px 45px 75px;
+        }
+
+        .welcome {
+            color: #b76596;
+            margin-bottom: 25px;
+        }
+
+        .hero h2 {
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            margin-bottom: 15px;
+        }
+
+        .hero h3 {
+            color: #c47fa5;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #818994;
+            line-height: 1.9;
+        }
+
+        .profile-photo {
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-photo::before {
+            content: "";
+            position: absolute;
+            width: 390px;
+            height: 390px;
+            background: #edf0f4;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .profile-photo img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 340px;
+            height: 500px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .projects-preview h2 {
+            margin-bottom: 20px;
+        }
+
+        .project-card {
+            background: #f4eaf1;
+            padding: 22px;
+            border-radius: 25px;
+            margin-bottom: 15px;
+        }
+
+        .project-card:nth-child(even) {
+            background: #f0eafa;
+        }
+
+        .project-card h3 {
+            margin: 12px 0;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #777;
+        }
+
+        /* SECTION UMUM */
+        section.content-section {
+            padding: 55px;
+        }
+
+        .section-title {
+            color: #c17fa3;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .section-text {
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .education-card, .experience-card {
+            background: #f4eaf1;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: #f1e8f0;
+            padding: 14px 24px;
+            border-radius: 30px;
+        }
+
+        .project-full {
+            background: #f8f2f7;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .project-full h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-full a {
+            color: #b86f98;
+            margin-right: 15px;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: #f8f1f6;
+            margin: 35px 45px;
+            padding: 45px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .contact-section p {
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .contact-list a {
+            text-decoration: none;
+            background: white;
+            color: #805c73;
+            padding: 15px 22px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .contact-list a:hover {
+            background: #d59ab9;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            color: #999;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 950px) {
+            body {
+                padding: 15px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-photo img {
+                height: 400px;
+            }
+
+            .profile-photo::before {
+                width: 300px;
+                height: 300px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            nav div {
+                text-align: center;
+            }
+
+            section.content-section {
+                padding: 30px;
+            }
+
+            .contact-section {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero h2 {
+                font-size: 27px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="main-container">
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Elis Puspita Sari<span>.</span></div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#works">Works</a>
+            <a href="#about">About</a>
+        </div>
+
+        <a href="#contact" class="talk-button">LET'S TALK</a>
+    </nav>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+
+        <div>
+            <div class="welcome">HELLO, WELCOME</div>
+
+            <h2>Hello, I'm</h2>
+
+            <h1>{{ data.profile.name }}</h1>
+
+            <h3>{{ data.profile.title }}</h3>
+
+            <p>{{ data.profile.description }}</p>
+        </div>
+
+        <div class="profile-photo">
+            <img src="{{ url_for('static', filename='images/profile.jpeg') }}"
+                 alt="Foto profil Elis">
+        </div>
+
+        <div class="projects-preview">
+            <h2>My Projects ♡</h2>
+
+            {% for project in data.projects[:3] %}
+            <div class="project-card">
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.category }}</p>
+                <p>{{ project.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="content-section" id="works">
+
+        <h2 class="section-title">My Works ♡</h2>
+
+        {% for project in data.projects %}
+        <div class="project-full">
+
+            <h3>{{ project.name }}</h3>
+
+            <p><strong>{{ project.category }}</strong></p>
+
+            <p>{{ project.description }}</p>
+
+            <p>
+                Technologies:
+                {{ project.technologies | join(', ') }}
+            </p>
+
+            {% if project.github %}
+            <a href="{{ project.github }}" target="_blank">GitHub Project</a>
+            {% endif %}
+
+            {% if project.demo %}
+            <a href="{{ project.demo }}" target="_blank">Live Demo</a>
+            {% endif %}
+
+        </div>
+        {% endfor %}
+
+    </section>
+
+    <!-- ABOUT -->
+    <section class="content-section" id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <p class="section-text">
+            {{ data.profile.description }}
+        </p>
+
+        <h2>My Education</h2>
+
+        {% for edu in data.education %}
+        <div class="education-card">
+            <h3>{{ edu.school }}</h3>
+            <p>{{ edu.major }} - {{ edu.year }}</p>
+        </div>
+        {% endfor %}
+
+        <h2>My Experience</h2>
+
+        {% for exp in data.experiences %}
+        <div class="experience-card">
+            <h3>{{ exp.name }}</h3>
+            <strong>{{ exp.position }}</strong>
+            <p>{{ exp.description }}</p>
+        </div>
+        {% endfor %}
+
+        <h2>My Skills</h2>
+
+        <div class="skills-list">
+            {% for skill in data.skills %}
+            <span class="skill">{{ skill }}</span>
+            {% endfor %}
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+
+        <h2 class="section-title">Let's Connect ♡</h2>
+
+        <p>
+            Sebagai mahasiswa, saya terbuka untuk kesempatan magang, kerja paruh waktu, 
+            atau kolaborasi proyek.
+             Silakan hubungi saya melalui kontak yang tersedia.
+        </p>
+
+        <div class="contact-list">
+
+            <a href="mailto:{{ data.profile.email }}">
+                ✉ Email Me
+            </a>
+
+            <a href="https://wa.me/6282181065434" target="_blank">
+                ☎ WhatsApp
+            </a>
+
+            <a href="{{ data.profile.github }}" target="_blank">
+                GitHub
+            </a>
+
+        </div>
+
+        <p style="margin-top:25px;">
+            {{ data.profile.email }}
+        </p>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 {{ data.profile.name }} | Personal Portfolio
+    </footer>
+
+</div>
+
+</body>
+</html>

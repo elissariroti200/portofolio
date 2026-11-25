@@ -1,0 +1,80 @@
+
+{
+    "profile": {
+        "name": "Elis Puspita Sari",
+        "title": "Informatics Student",
+        "role": "Aspiring IT Professional & Freelancer",
+        "description": "Mahasiswa Informatika yang tertarik pada pengembangan web dan pengelolaan basis data.",
+        "email": "elispuspitasari200@gmail.com",
+        "phone": "082181065434",
+        "location": "Yogyakarta",
+        "github": "https://github.com/elissariroti200",
+        "linkedin": "https://www.linkedin.com/in/elispuspitasari"
+    },
+    "education": [
+        {
+            "school": "Universitas Nahdlatul Ulama Yogyakarta",
+            "major": "S1 Informatika",
+            "year": "2025 - 2029"
+        }
+    ],
+    "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Python",
+        "Flask",
+        "MySQL",
+        "GitHub",
+        "Microsoft Office",
+        "Microsoft Word",
+        "Microsoft Excel",
+        "Canva"
+    ],
+    "projects": [
+        {
+            "id": 2,
+            "name": "Database Management",
+            "category": "Database",
+            "description": "Perancangan basis data menggunakan MySQL.",
+            "technologies": ["SQL", "MySQL", "MySQL Workbench"],
+            "github": "",
+            "demo": "",
+            "image": ""
+        },
+        {
+            "id": 3,
+            "name": "Personal Portfolio",
+            "category": "Web Development",
+            "description": "Website portofolio pribadi untuk menampilkan profil dan hasil proyek.",
+            "technologies": ["HTML", "CSS", "Python", "Flask"],
+            "github": "",
+            "demo": "",
+            "image": ""
+        },
+        {
+            "id": 4,
+            "name": "Website Jasa Laundry",
+            "category": "Web Development",
+            "description": "Website responsif untuk menampilkan layanan jasa laundry.",
+            "technologies": ["HTML", "CSS", "JavaScript", "Python", "Flask"],
+            "github": "",
+            "demo": "",
+            "image": ""
+        }
+    ],
+    "experiences": [
+        {
+            "id": 1,
+            "name": "Festival Lampion Jogja 2025",
+            "position": "Volunteer - Ticketing",
+            "description": "Membantu pelayanan dan pengecekan tiket pengunjung."
+        },
+        {
+            "id": 2,
+            "name": "Best Libu Perpustakaan",
+            "position": "Bendahara",
+            "description": "Mengelola pembukuan dan pencatatan kas organisasi menggunakan Microsoft Excel."
+        }
+    ]
+}
